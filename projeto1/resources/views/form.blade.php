@@ -11,14 +11,23 @@
     <form action="/form-salvar" method="post"> <!-- action daqui deve ser o mesmo da rota com post -->
     @csrf
 
-        Nome
+        <label for="nome">Nome</label>
         <input type="text" name="nome">
 
-        Celular
+        <label for="celular">Celular</label>
         <input type="text" name="celular">
 
         <input type="submit" value="Enviar">
     </form>
+
+    @if(isset($dados))
+        <h2>Contatos</h2>
+        <ul>
+            @foreach($dados as $contato)
+                <li>{{ $contato['nome'] }} - {{ $contato['cel'] }}</li>
+            @endforeach
+        </ul>
+    @endif
 
 
 </body>

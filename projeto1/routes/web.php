@@ -30,10 +30,13 @@ Route::get('/form-abrir', function () {
 });
 
 // exibindo os dados obtidos no formulário
-Route::post('/form-salvar', 
+Route::post('/form-s', 
     ['uses'=>'App\Http\Controllers\FormController@salvarDados']
               // caminho           // arquivo     // função
 );
+
+Route::get('/form-lista', 'App\Http\Controllers\FormController@index');
+Route::post('/form-salvar', 'App\Http\Controllers\FormController@salvarDados');
 
 /*
 Route::post('/form-salvar', function () {

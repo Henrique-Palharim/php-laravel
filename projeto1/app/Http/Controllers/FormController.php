@@ -16,4 +16,14 @@ class FormController extends Controller
 
         dd($req);
     }
+
+    public function index()
+    {
+        $dados = [
+            ["nome" => "maria", "cel" => "123"],
+            ["nome" => "joao", "cel" => "456"]
+        ];
+
+        return view("form", compact("dados"));
+    }
 }
