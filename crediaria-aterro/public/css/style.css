@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+input {
+    display: block;
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    background-color: lightblue;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
