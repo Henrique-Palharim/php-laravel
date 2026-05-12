@@ -1,5 +1,8 @@
 @extends('layout.site')
 
+@section('titulo_aba', 'Resultado do Cálculo')
+@section('titulo_header', 'Resultado')
+
 @section('conteudo')
 
 <div style="padding:20px;">

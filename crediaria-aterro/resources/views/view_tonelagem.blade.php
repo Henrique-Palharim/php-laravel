@@ -1,5 +1,8 @@
 @extends('layout.site')
 
+@section('titulo_aba', 'Aterro Sanitário')
+@section('titulo_header', 'Formulário')
+
 @section('conteudo')
     
     <form action="calc_tonelagem" method="post">

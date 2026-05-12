@@ -1,5 +1,7 @@
 @include('layout._cabecalho')
 
-@yield('conteudo')
+<main>
+    @yield('conteudo')
+</main>
 
 @include('layout._rodape')

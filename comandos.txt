@@ -1,5 +1,7 @@
 composer create-project laravel/laravel nome-do-arquivo
 
+composer create-project --prefer-dist laravel/laravel nome-da-pasta
+
 php artisan serve
 
 php artisan make:controller nome-do-controlador
