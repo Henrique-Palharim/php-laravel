@@ -15,9 +15,9 @@ return new class extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->string('descricao');
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
             $table->decimal('valor', 5,2);
-            $table->enum('publicado', ['sim','não'])->default('não');
+            $table->enum('publicado', ['sim','nao'])->default('nao');
             $table->timestamps();
         });
     }
