@@ -2,74 +2,71 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
+// rota raiz abre o seu arquivo home.blade.php
 Route::get('/', function () {
-    return view('welcome');
-});
-*/
+    return view('home');
+})->name('home');
 
-Route::get('/',
-['as' =>'admin.cursos',
-'uses'=>'App\Http\Controllers\Admin\CursoController@index']);
+// --- ROTAS DE CURSOS ----------------------------------------
 
-Route::get('/admin/cursos',
-['as' =>'admin.cursos',
-'uses'=>'App\Http\Controllers\Admin\CursoController@index']);
+Route::get('/admin/cursos', [
+    'as'   => 'admin.cursos',
+    'uses' => 'App\Http\Controllers\Admin\CursoController@index'
+]);
 
-Route::get('/admin/cursos/adicionar',
-['as' =>'admin.cursos.adicionar',
-'uses'=>'App\Http\Controllers\Admin\CursoController@adicionar']);
+Route::get('/admin/cursos/adicionar', [
+    'as'   => 'admin.cursos.adicionar',
+    'uses' => 'App\Http\Controllers\Admin\CursoController@adicionar'
+]);
 
-Route::post('/admin/cursos/salvar',
-['as' =>'admin.cursos.salvar',
-'uses'=>'App\Http\Controllers\Admin\CursoController@salvar']);
+Route::post('/admin/cursos/salvar', [
+    'as'   => 'admin.cursos.salvar',
+    'uses' => 'App\Http\Controllers\Admin\CursoController@salvar'
+]);
 
-Route::get('/admin/cursos/editar/{id}',
-['as' =>'admin.cursos.editar',
-'uses'=>'App\Http\Controllers\Admin\CursoController@editar']);
+Route::get('/admin/cursos/editar/{id}', [
+    'as'   => 'admin.cursos.editar',
+    'uses' => 'App\Http\Controllers\Admin\CursoController@editar'
+]);
 
-Route::put('/admin/cursos/atualizar/{id}',
-['as' =>'admin.cursos.atualizar',
-'uses'=>'App\Http\Controllers\Admin\CursoController@atualizar']);
-Route::get('/admin/cursos/excluir/{id}',
+Route::put('/admin/cursos/atualizar/{id}', [
+    'as'   => 'admin.cursos.atualizar',
+    'uses' => 'App\Http\Controllers\Admin\CursoController@atualizar'
+]);
 
-['as' =>'admin.cursos.excluir',
-'uses'=>'App\Http\Controllers\Admin\CursoController@excluir']);
+Route::get('/admin/cursos/excluir/{id}', [
+    'as'   => 'admin.cursos.excluir',
+    'uses' => 'App\Http\Controllers\Admin\CursoController@excluir'
+]);
 
-// ------------------------------------------------------------
+// --- ROTAS DE ALUNOS ----------------------------------------
 
-Route::get('/admin/alunos',
-[
-    'as' => 'admin.alunos',
+Route::get('/admin/alunos', [
+    'as'   => 'admin.alunos',
     'uses' => 'App\Http\Controllers\Admin\AlunoController@index'
 ]);
 
-Route::get('/admin/alunos/adicionar',
-[
-    'as' => 'admin.alunos.adicionar',
+Route::get('/admin/alunos/adicionar', [
+    'as'   => 'admin.alunos.adicionar',
     'uses' => 'App\Http\Controllers\Admin\AlunoController@adicionar'
 ]);
 
-Route::post('/admin/alunos/salvar',
-[
-    'as' => 'admin.alunos.salvar',
+Route::post('/admin/alunos/salvar', [
+    'as'   => 'admin.alunos.salvar',
     'uses' => 'App\Http\Controllers\Admin\AlunoController@salvar'
 ]);
 
-Route::get('/admin/alunos/editar/{id}',
-[
-    'as' => 'admin.alunos.editar',
+Route::get('/admin/alunos/editar/{id}', [
+    'as'   => 'admin.alunos.editar',
     'uses' => 'App\Http\Controllers\Admin\AlunoController@editar'
 ]);
 
-Route::put('/admin/alunos/atualizar/{id}',
-[
-    'as' => 'admin.alunos.atualizar',
+Route::put('/admin/alunos/atualizar/{id}', [
+    'as'   => 'admin.alunos.atualizar',
     'uses' => 'App\Http\Controllers\Admin\AlunoController@atualizar'
 ]);
 
-Route::get('/admin/alunos/excluir/{id}',
-[
-    'as' => 'admin.alunos.excluir',
+Route::get('/admin/alunos/excluir/{id}', [
+    'as'   => 'admin.alunos.excluir',
     'uses' => 'App\Http\Controllers\Admin\AlunoController@excluir'
 ]);
