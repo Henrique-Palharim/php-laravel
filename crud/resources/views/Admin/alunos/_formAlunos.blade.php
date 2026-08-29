@@ -22,7 +22,6 @@
             </option>
         @endforeach
     </select>
-    <label>Curso</label>
 </div>
 
 <!-- IMAGEM -->

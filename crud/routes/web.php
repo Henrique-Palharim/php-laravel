@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\GoogleController;
+
 // rota raiz abre o seu arquivo home.blade.php
 Route::get('/', function () {
     return view('home');
@@ -70,3 +72,13 @@ Route::get('/admin/alunos/excluir/{id}', [
     'as'   => 'admin.alunos.excluir',
     'uses' => 'App\Http\Controllers\Admin\AlunoController@excluir'
 ]);
+
+// --- LOGIN GOOGLE ----------------------------------------
+
+// Redireciona o usuário para o Google
+Route::get('/auth/google',
+[GoogleController::class, 'redirectToGoogle'])->name('auth.google');
+
+// Callback onde o Google retorna os dados do usuário
+Route::get('/auth/google/callback',
+[GoogleController::class, 'handleGoogleCallback']);
